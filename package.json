@@ -3,6 +3,10 @@
   "version": "0.0.0-development",
   "description": "A Phaser 3 Game",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joey80/moochies.git"
+  },
   "scripts": {
     "build": "webpack --config .webpack/prod.js",
     "start": "webpack-dev-server --config .webpack/dev.js --open"

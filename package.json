@@ -7,8 +7,6 @@
     "build": "webpack --config .webpack/prod.js",
     "start": "webpack-dev-server --config .webpack/dev.js --open"
   },
-  "author": "Joey Leger (https://www.joeyui.com)",
-  "homepage": "https://joeyui-moochie.netlify.app/",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",

@@ -25,4 +25,4 @@ jobs:
       - run: npm run build
       - run: npx semantic-release
         env:
-          GH_TOKEN: ${{ secrets.MOOCHIES_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}

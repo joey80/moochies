@@ -1,4 +1,4 @@
-<del># 0.1 - epic/semver
+<del># 1.0 - epic/semver
 
 - set up semantic versioning
 - set up ci/cd with netlify</del>
@@ -7,6 +7,7 @@
 
 - create a new battle scene
 - transition between battle and overworld scene
+- pass data from scene to scene
 
 # 1.1 - epic/graphics
 

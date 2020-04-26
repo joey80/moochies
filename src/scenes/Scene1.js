@@ -2,6 +2,7 @@ import Hero from '../classes/Hero';
 import Moochie from '../classes/Moochie';
 import HeroImage from '../assets/newrun.png';
 import MoochImage from '../assets/lamb.png';
+import { Data } from '../assets/data';
 
 class Scene1 extends Phaser.Scene {
   constructor() {
@@ -22,14 +23,14 @@ class Scene1 extends Phaser.Scene {
       name: 'moochies',
     });
 
-    return Array.from(Array(num)).map((elm) => {
+    return Array.from(Array(num)).map((elm, idx) => {
       const pos = {
         x: Phaser.Math.Between(0, this.game.config.width),
         y: Phaser.Math.Between(0, this.game.config.height),
       };
       const newMooch = new Moochie({ scene: this, x: pos.x, y: pos.y });
       newMooch.setDataEnabled();
-      newMooch.data.set({ name: 'joey' + pos.x });
+      newMooch.data.set({ name: Data.moochies[idx].name });
       this.moochGroup.add(newMooch);
       return newMooch;
     });

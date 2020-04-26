@@ -4,29 +4,36 @@ class Scene3 extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(16, 16, 'You are now in a battle', {
+    this.sys.events.on('wake', this.wake, this);
+    this.battleSetup();
+  }
+
+  exitBattle() {
+    this.scene.switch('bootGame');
+  }
+
+  startBattle() {
+    this.text = this.add.text(16, 16, `You are now in a battle for ${this.name}`, {
       fontSize: '32px',
       fontFamily: '"Roboto Condensed"',
       fill: '#fff',
     });
-
-    console.log(this.registry);
-    this.sys.events.on('wake', this.wake, this);
 
     setTimeout(() => {
       this.scene.switch('bootGame');
     }, 2000);
   }
 
-  update() {}
-
-  exitBattle() {
-    this.scene.switch('bootGame');
+  battleSetup() {
+    this.name = this.registry.list.activeMooch.data.list.name;
+    if (this.text) {
+      this.text.destroy();
+    }
+    this.startBattle();
   }
 
   wake() {
-    console.log(this.registry);
-    this.time.addEvent({ delay: 2000, callback: this.exitBattle, callbackScope: this });
+    this.battleSetup();
   }
 }
 

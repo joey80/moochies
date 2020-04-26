@@ -5,6 +5,8 @@ class Hero extends Phaser.Physics.Arcade.Sprite {
     config.scene.physics.add.existing(this);
     this.setCollideWorldBounds(true);
     this.scene = config.scene;
+    // attacks: carr-ate, sneak-attack, anaconda sqeeze, mush-head
+    // 1. lambie 2. lamb-B 3. lambster
   }
 
   update() {

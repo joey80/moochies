@@ -30,7 +30,7 @@ class Scene1 extends Phaser.Scene {
       };
       const newMooch = new Moochie({ scene: this, x: pos.x, y: pos.y });
       newMooch.setDataEnabled();
-      newMooch.data.set({ name: Data.moochies[idx].name });
+      newMooch.data.set(Data.moochies[idx]);
       this.moochGroup.add(newMooch);
       return newMooch;
     });
@@ -72,8 +72,6 @@ class Scene1 extends Phaser.Scene {
     this.removeAMooch(mooch);
     this.registry.set({ activeMooch: mooch });
     this.scene.switch('battle');
-    // this.logoHero.scale += 0.2
-    // this.cameras.main.shake()
   }
 
   update() {

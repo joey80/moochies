@@ -10,6 +10,7 @@ class Scene3 extends Phaser.Scene {
       fill: '#fff',
     });
 
+    console.log(this.registry);
     this.sys.events.on('wake', this.wake, this);
 
     setTimeout(() => {
@@ -24,6 +25,7 @@ class Scene3 extends Phaser.Scene {
   }
 
   wake() {
+    console.log(this.registry);
     this.time.addEvent({ delay: 2000, callback: this.exitBattle, callbackScope: this });
   }
 }
